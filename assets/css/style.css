@@ -1,214 +1,120 @@
-* {
-  box-sizing: border-box;
+body {
   margin: 0;
   padding: 0;
+  height: 100%;
 }
 
 .section {
-  height: 100vh;
-  width: 100%;
-  display: flex; /* Add display: flex */
-  flex-direction: column;
-  justify-content: center; /* Add justify-content: center */
-  align-items: center; /* Add align-items: center */
+  height: 100vh; /* with this property, each section will cover the full screen */
+  display: flex;/*  Makes the webpage easily responsive */
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 3rem;
+  text-align: center;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; /* For the parallax effect */
 }
+
+/* Section1 styles */
 
 #section1 {
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #2B2D42;
-  background-image: url('services-bg.jpg');
-  background-size: cover;
+  color: white;
+  text-shadow: 1px 1px #000;
+  padding: 2rem;
+  background-color: #333;
+  background-image: url("../images/Services_bg.png");
+  backdrop-filter: blur(0px);
 }
 
-#section1 .image,
-#section1 .text {
-  border-radius: 20px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-  padding: 1rem;
-}
-
-#section1 .image {
-  float: right;
-  width: 50%;
-  height: auto;
-  margin: 1rem;
-}
-
-#section1 .text {
-  float: left;
-  width: 50%;
-  height: auto;
-  margin: 1rem;
-}
-
-#section1 .box {
-  background-color: rgba(0, 0, 0, 0.5);
-  border-radius: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+#section1::before{
+  content: "";
+  position: absolute;
+  top: 0cm;
+  left: 0cm;
+  width: 100%;
   height: 100%;
-  width: 100%;
-  position: relative;
-  z-index: 1;
+  background-color: rgba(0,0,0,0.6);
+  z-index: -1;
 }
 
-#section1 .container {
-  height: 70vh;
-  width: 90vw;
-  margin: 0 auto;
-  background-color: #282c34;
+.content-wrapper {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
-  align-items: center;
+  background-color: #333;
+  height: 50vh;
+  width: 90vh;
   border-radius: 20px;
+  overflow: hidden;
+  padding: 20px;
 }
 
-#section2 h1 {
-  font-family: 'IBM Plex Mono', monospace;
-  font-weight: 700;
-  font-size: 4rem;
-  margin-bottom: 1em;
-}
 
-#section2 ul li {
-  font-family: 'IBM Plex Mono', monospace;
-  font-style: italic;
-  font-weight: 800;
-  font-size: 1.5rem;
-  line-height: 2.5rem;
-  padding: 0.5rem;
-}
-
-.checklist li {
-  margin-bottom: 1em;
-  padding-left: 1.5em;
-}
-
-.purple {
-  background-color: #36454F;
-}
-
-.yellow {
-  background-color: yellow;
-}
-
-.container {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
+.image-wrapper {
+  width: 40%;
   height: auto;
-  width: 100%;
-  max-width: 720px;
-  margin: 0 auto;
-}
-.image, .text{
-  
-  background-color: transparent;
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;/* Added to display child elements in column*/
 }
-.image {
-  flex:1;
-  height: 500px;
-  width: 500px;
-  background-color: transparent;
-  order: 1;
+
+.image-wrapper img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
 }
-.image img{
-  width: 80%;
-  height:auto;
-}
-.text {
-  flex:1;
-  height: 500px;
-  width: 500%;
-  background-color: transparent;
-  order: 2;
+
+.text-wrapper {
+  width: 60%;
+  padding: 1rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border: none;
-}
-.text h1{
-  color: white;
-  width: 100%;
-  font-size: 3rem;
-  margin-bottom: 10px;/* Added margin -bottom to create space */
-}
-.text p{
-  color:#cec1c1;
-  margin-top: 10px;/* Added to create space*/
-  width:80%;
-}
-.checklist {
-  list-style-type: none; /* Remove default bullets */
-  padding: 0; /* Remove default padding */
-  margin-top: 20px; /* Add margin to create space */
-}
-
-.checklist li {
-  margin: 10px 0; /* Add margin to create space between items */
-}
-
-.checklist input[type="checkbox"] {
-  margin-right: 0.5em;
-  appearance: none;
-}
-
-.checklist li input[type="checkbox"] {
-  display: none;
-}
-.checklist li label:before {
-  content: "";
-  display: inline-block;
-  width: 1em;
-  height: 1em;
-  background: white;
-  border-radius: 0.2em;
-  border: 1px solid green;
-  margin-right: 0.5em;
+  color: #fff;
   text-align: center;
-  vertical-align: middle;
-  line-height: 1em;
-  transition: background-color 0.3s ease;
-}
-.checklist li input[type="checkbox"]:checked + label:before {
-  content: "\2714";
-  color: white;
-  background-color: green;
+  font-size: 1.5rem;
 }
 
-@media only screen and (max-width: 720px) {
-  .container {
-    flex-direction: column;
+/*  Section2 styles */
+
+#section2 {
+  background-color: #ffcc33;
+ /* background-image: ;*/
+}
+
+/* Section3 styles */
+
+#section3 {
+  background-color: #333;
+  /* background-image: ;*/
+}
+
+/* Section4 styles */
+
+#section4 {
+  background-color: #ffcc33;
+  /* background-image: ;*/
+}
+
+/* Media queries */
+
+@media screen and (min-width: 720px) {
+  .content-wrapper {
+    justify-content: space-between;
+    align-items: center;
   }
 
-  .container1{
-    flex-direction: row;
+  .image-wrapper {
+    max-width: 50%;
+    margin: 0;
   }
 
-  .image {
-    width: 200px;
-    height: auto;
-    order: 1;
-    margin-bottom: 10px;
-  }
-  
-  .image img{
-    width:100%;
-    height: auto;
-  }
-
-  .text {
-    order: 2;
-    width: 100%;
+  .text-wrapper {
+    max-width: 50%;
+    margin: 0;
+    text-align: left;
   }
 }
