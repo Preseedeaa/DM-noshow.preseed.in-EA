@@ -8,12 +8,88 @@
   height: 100vh;
   width: 100%;
   display: flex; /* Add display: flex */
+  flex-direction: column;
   justify-content: center; /* Add justify-content: center */
   align-items: center; /* Add align-items: center */
 }
 
+#section1 {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #2B2D42;
+  background-image: url('services-bg.jpg');
+  background-size: cover;
+}
+
+#section1 .image,
+#section1 .text {
+  border-radius: 20px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+}
+
+#section1 .image {
+  float: right;
+  width: 50%;
+  height: auto;
+  margin: 1rem;
+}
+
+#section1 .text {
+  float: left;
+  width: 50%;
+  height: auto;
+  margin: 1rem;
+}
+
+#section1 .box {
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+#section1 .container {
+  height: 70vh;
+  width: 90vw;
+  margin: 0 auto;
+  background-color: #282c34;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+}
+
+#section2 h1 {
+  font-family: 'IBM Plex Mono', monospace;
+  font-weight: 700;
+  font-size: 4rem;
+  margin-bottom: 1em;
+}
+
+#section2 ul li {
+  font-family: 'IBM Plex Mono', monospace;
+  font-style: italic;
+  font-weight: 800;
+  font-size: 1.5rem;
+  line-height: 2.5rem;
+  padding: 0.5rem;
+}
+
+.checklist li {
+  margin-bottom: 1em;
+  padding-left: 1.5em;
+}
+
 .purple {
-  background-color: purple;
+  background-color: #36454F;
 }
 
 .yellow {
@@ -25,32 +101,89 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  height: 70px;
+  height: auto;
   width: 100%;
   max-width: 720px;
   margin: 0 auto;
 }
 .image, .text{
-  flex:1;
+  
   background-color: transparent;
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;/* Added to display child elements in column*/
 }
 .image {
-  height: 70px;
-  width: 70px;
+  flex:1;
+  height: 500px;
+  width: 500px;
   background-color: transparent;
-  
+  order: 1;
+}
+.image img{
+  width: 80%;
+  height:auto;
+}
+.text {
+  flex:1;
+  height: 500px;
+  width: 500%;
+  background-color: transparent;
   order: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: none;
+}
+.text h1{
+  color: white;
+  width: 100%;
+  font-size: 3rem;
+  margin-bottom: 10px;/* Added margin -bottom to create space */
+}
+.text p{
+  color:#cec1c1;
+  margin-top: 10px;/* Added to create space*/
+  width:80%;
+}
+.checklist {
+  list-style-type: none; /* Remove default bullets */
+  padding: 0; /* Remove default padding */
+  margin-top: 20px; /* Add margin to create space */
 }
 
-.text {
-  height: 70px;
-  width: 70px;
-  background-color: transparent;
-  
-  order: 1;
+.checklist li {
+  margin: 10px 0; /* Add margin to create space between items */
+}
+
+.checklist input[type="checkbox"] {
+  margin-right: 0.5em;
+  appearance: none;
+}
+
+.checklist li input[type="checkbox"] {
+  display: none;
+}
+.checklist li label:before {
+  content: "";
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  background: white;
+  border-radius: 0.2em;
+  border: 1px solid green;
+  margin-right: 0.5em;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 1em;
+  transition: background-color 0.3s ease;
+}
+.checklist li input[type="checkbox"]:checked + label:before {
+  content: "\2714";
+  color: white;
+  background-color: green;
 }
 
 @media only screen and (max-width: 720px) {
@@ -58,9 +191,20 @@
     flex-direction: column;
   }
 
+  .container1{
+    flex-direction: row;
+  }
+
   .image {
+    width: 200px;
+    height: auto;
     order: 1;
     margin-bottom: 10px;
+  }
+  
+  .image img{
+    width:100%;
+    height: auto;
   }
 
   .text {
