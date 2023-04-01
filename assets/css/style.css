@@ -14,7 +14,7 @@ body {
   text-align: center;
   background-size: cover;
   background-position: center;
-  background-attachment: fixed; /* For the parallax effect */
+
 }
 
 /* Section1 styles */
@@ -26,6 +26,7 @@ body {
   background-color: #333;
   background-image: url("../images/Services_bg.png");
   backdrop-filter: blur(0px);
+  background-attachment: fixed; /* For the parallax effect */
 }
 
 #section1::before{
@@ -75,21 +76,78 @@ body {
   align-items: center;
   color: #fff;
   text-align: center;
-  font-size: 1.5rem;
+  font-size: calc(15px + (24 - 15) * (100vw _ 320px) / (1920 - 320));
 }
 
 /*  Section2 styles */
 
 #section2 {
-  background-color: #ffcc33;
- /* background-image: ;*/
+  background-color: #f8f8f8;
+  color: #333;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
+
+#section2 h2 {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: calc(15px + (24 - 15) * (100vw - 320px) / (1920 - 320));
+  color: #333;
+  margin-bottom: 20px;
+}
+
+#section2 ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#section2 li {
+  margin-bottom: 10px;
+}
+
+#section2 li label {
+  display: flex;
+  align-items: center;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: calc(15px + (24 - 15) * (100vw - 320px) / (1920 - 320));
+}
+
+#section2 li input[type="checkbox"] {
+  display: none;
+}
+
+#section2 li span {
+  margin-left: 10px;
+}
+
+#section2 li label:before {
+  content: '';
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  background-color: #fff;
+  border: 2px solid #2ecc71;
+  border-radius: 4px;
+}
+
+#section2 li input[type="checkbox"]:checked + label:before {
+  content: '\2713';
+  font-size: 18px;
+  text-align: center;
+  color: #fff;
+  background-color: #2ecc71;
+}
+
 
 /* Section3 styles */
 
 #section3 {
   background-color: #333;
-  /* background-image: ;*/
+   background-image: url("https://source.unsplash.com/random/400x400");
 }
 
 /* Section4 styles */
