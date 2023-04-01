@@ -183,12 +183,51 @@ body {
 
 #section3 {
   background-color: #474747;
-  height: 100vh;
+  height: 240vh;
   width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+}
+
+@media only screen and (min-width: 360px){
+  #section3 {
+    height: 240vh;
+  }
+}
+
+@media only screen and (min-width: 530px){
+  #section3 {
+    height: 250vh;
+  }
+}
+
+@media only screen and (min-width: 570px){
+  #section3 {
+    height: 260vh;
+  }
+}
+
+@media only screen and (min-width: 650px){
+  #section3 {
+    height: 270vh;
+  }
+}
+
+@media only screen and (min-width: 687px){
+  #section3 {
+    height: 280vh;
+  }
+}
+
+@media only screen and (min-width: 720px){
+  #section3 {
+    height: 120vh;
+  }
+  .service h3{
+    margin-top: 10px;
+  }
 }
 
 #section3 h1 {
@@ -198,6 +237,59 @@ body {
   text-align: center;
   margin-top: 50px;
   text-shadow: 2px 2px 4px rgba(0,0,0,0.4);
+}
+
+.services-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 80%;
+}
+
+.service {
+  background-color: #fff;
+  padding: 1rem;
+  margin-bottom: 2rem;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  flex-basis: calc(35% - 1rem);
+  max-width: calc(30% - 1rem);
+  color: #000;
+}
+
+.service h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  margin-top: -20px;
+}
+
+.service p {
+  font-size: 1rem;
+  color: #777;
+  line-height: 1.5;
+}
+
+.laptop, .brand, .SM{
+  width: 100%;
+}
+
+.more-coming-soon {
+  font-family: cursive;
+  font-size: calc(8px + 1vw);
+  margin-top: 2rem;
+  color: white;
+}
+
+@media screen and (max-width: 720px) {
+  .services-container {
+    flex-wrap: wrap;
+    max-width: 100%;
+  }
+  
+  .service {
+    flex-basis: 100%;
+    max-width: 100%;
+  }
 }
 
 /* Section4 styles */
