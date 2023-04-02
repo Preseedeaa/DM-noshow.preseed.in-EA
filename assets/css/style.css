@@ -303,8 +303,94 @@ body {
 /* Section4 styles */
 
 #section4 {
+  height: 80vh;
+  width:100%;
   background-color: #ffcc33;
-  /* background-image: ;*/
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+#section4 h1{
+  font-size: calc(11px + (44 - 11) * (100vw - 320px) / (1920 - 320));
+  color: #000;
+  top:0;
+  /*text-shadow: 10px 5px 5px rgba(0,0,0,0.4);*/
+}
+
+footer {
+  width: 100%;
+  height: 60vh;
+  background-color: rgba(0,0,0,0.71);
+  color: #fff;
+  padding: 20px ;
+  margin-left: 10px;
+  font-family: Arial, sans-serif;
+  bottom: 0;
+  border-radius: 20px;
+  background-image: url("../images/sea-gull.png");
+  background-position: -50px -200px;
+  justify-content: end;
+  background-position: fixed;
+  position: relative;
+}
+
+.container {
+  max-width: 75%;
+  height: 45vh;
+  display: flex;
+  justify-content: space-around;
+  background-color: #3333337d;
+  border-radius: 10px;
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  
+}
+
+.column {
+  flex: 1;
+  margin-right: 20px;
+  margin-left: 20px;
+}
+
+.column:last-child {
+  margin-right: 0;
+}
+
+footer h3 {
+  font-size: calc(11px + (22 - 11) * (100vw - 320px) / (1920 - 320));
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+footer p {
+  margin: 0;
+  font-size: calc(11px + (22 - 11) * (100vw - 320px) / (1920 - 320));
+
+}
+
+footer ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+footer li {
+  margin-bottom: 5px;
+}
+
+footer a {
+  color: #fff;
+  font-size: calc(11px + (22 - 11) * (100vw - 320px) / (1920 - 320));
+  text-decoration: none;
+  transition: color 0.3s ease;
+  padding-bottom: 10px;
+}
+
+footer a:hover {
+  color: #f00;
 }
 
 /*------------- Media queries---------------------- */
